@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,600,700&display=swap');
+
+// Font Variables
+$nunito: 'Nunito', sans-serif;   
+
+// Colour Variables
+$primary: #FC3D54;
+$secondary: #FE9456;
+$dark: #31333B;
+$light: #F2F5FF;
+$white: #ffffff;
+$black: #000000;
+$background-gradient: linear-gradient(to bottom,#f9fbfd 0,#fff 100%);
+
+@mixin background-settings(){
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-blend-mode: overlay;
+}
+
+@mixin transition(){
+    transition: all .7s cubic-bezier(.2,1,.22,1);
+}
+
+// General Styles
+html{
+    font-size: 12px;
+    @media (min-width: 768px) { 
+        font-size: 12px;    
+    }
+    @media (min-width: 992px){
+        font-size: 14px;
+    }
+    @media (min-width: 1200px){
+        font-size: 14px;
+    }
+    @media (min-width: 1600px){
+        font-size: 16px;
+    }
+}
+
+
+body{
+    // background-image: $background-gradient;
+}
+
+.container{
+    @media (min-width: 1600px){
+        max-width: 1500px;
+    }
+}
+
+.container-fluid{
+    padding-left: 8.75rem;
+    padding-right: 8.75rem;
+    @media (max-width: 768px) { 
+        padding-left: 5rem;
+        padding-right: 5rem; 
+    }
+}
+
+.flex{
+    display: flex;
+
+    @media (max-width: 768px) { 
+        flex-direction: column;   
+    }
+}
+
+.row.equal-height > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: $nunito;
+}
+
+p,a, label{
+    font-family: $nunito;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+a{
+    @include transition();
+    color: $primary;
+}
+a:hover{
+    color: $secondary;
+    text-decoration: none;
+}
+
+label{
+    margin-top: 1rem;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1.header{
+    font-size: 5rem;
+    font-weight: 600;
+}
+h2.header{
+    font-size: 3.125rem;
+    margin-bottom: 2.5rem;
+}
+h3.header{
+    font-size: 1.8rem;
+}
+h4.header{
+    font-size: 1.25rem;
+}
+.bold{
+    font-weight: 600;
+    margin-bottom: 1em;
+}
+.bolder{
+    font-weight: 700;
+}
+.jumbo-text{
+    font-size: 3.75rem;
+}
+
+.button{
+    font-size: 1.1rem;
+    display: inline-block;
+    padding: 1.4rem 2.3rem 1.4rem 2.3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+.nav-button{
+    // font-size: 1.1rem;
+    // display: inline-block;
+    padding: 1em 2.5em 1em 2.5em;
+    color: $white;
+    // margin-top: 1rem;
+    // margin-bottom: 1rem;
+    border-radius: 10px;
+}
+.primary{
+    background-color: $primary;
+    color: $white;
+}
+.primary:hover{
+    background-color: $secondary;
+    color: $white;
+    text-decoration: none;
+}
+.secondary{
+    background-color: $secondary;
+    color: $white;
+}
+.secondary:hover{
+    background-color: $primary;
+    color: $white;
+    text-decoration: none;
+}
+.white{
+    background-color: $white;
+    color: $dark;
+    @include transition();
+}
+.white:hover{
+    text-decoration: none;
+    color: $dark;
+    transform: translateY(-6px);
+    box-shadow: 0px 30px 60px rgba($color: $black, $alpha: 0.3);
+}
+
+.logo{
+    width: 200px;
+}
+
+.navbar{
+    .navbar-header{
+        @media (max-width: 992px){
+            width: 100%;
+        }
+    }
+    .mobile-menu{
+        @media (max-width: 992px){
+            display: none;
+        }
+    }
+    .nav-item{
+        padding: 1em 1em;
+        display: flex;
+        align-items: center;
+
+        .nav-link:hover{
+            color: $primary;
+        }
+    }
+}
+
+
+// Section Specific Styles
+.padded-top-bottom{
+    padding-top: 6.25rem;
+    padding-bottom: 6.25rem;
+}
+
+section#menu{
+    padding: 0;
+}
+
+section#hero-home{
+    @include background-settings();
+    color: $white;
+    background-image: url('images/11.png');
+    background-color: rgba($color: $black, $alpha: 0.6);
+    text-align: center;
+    .hero-inner{
+        height: 35rem;
+        padding: 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+section#about{
+    
+    .about-text{
+        background-color: $primary;
+        color: $white;
+        flex: 3;
+    }
+
+    .about-image{
+        flex: 2;
+        .image{
+            // position: absolute;
+            // left: 0;
+            // top: 0;
+            @include background-settings();
+            background-image: url('images/5.png');
+            height: 100%;
+            width: 100%;
+            @media (max-width: 768px) { 
+                height: 20rem; 
+            }
+        }
+    }
+}
+
+section#vision{
+    .vision-text{
+        background-color: $dark;
+        color: $white;
+    }
+    .ministry-text{
+        background-color: $white;
+        color: $dark;
+    }
+
+}
+
+section#support{
+    background-color: $light;
+    color: $dark;
+    .support-image{
+        height: 100%;
+        .image{
+            display: inline-block;
+            @include background-settings();
+            height: 100%;
+            width: 70%;
+            border-radius: 10px;
+            @media (max-width: 768px) { 
+                height: 20rem; 
+                width: 100%;
+            }
+        }
+    }
+}
+
+section#donate{
+    @include background-settings();
+    background-image: url('images/4.png');
+    background-color: rgba($color: $black, $alpha: .6);
+    text-align: center;
+    color: $white;
+    p{
+        margin: 0 auto 3rem auto;
+        width: 60%;
+    }
+
+    .video-box{
+        width: 60%;
+        margin: 0 auto 4rem auto;
+        .embed-container{
+            position: relative; 
+            padding-bottom: 56.25%; 
+            height: 0; 
+            overflow: hidden; 
+            max-width: 100%; 
+        }
+        
+        iframe, 
+        object, 
+        embed {
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100% !important;
+        }
+    }
+}
+
+section#contact{
+    
+    .contact-us{
+        background-color: $light;
+        color: $dark;
+        flex: 1;
+    }
+    .reach-out{
+        background-color: $dark;
+        flex: 1;
+        color: $white;
+    }
+    input{
+        padding: 1.5rem;
+    }
+}
+
+section#footer{
+    padding: 2rem 0 2rem 0;
+    background-color: $dark;
+    text-align: center;
+    p{
+        margin: 0;
+        color: $white;
+    }
+    
+}
