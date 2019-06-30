@@ -286,9 +286,19 @@ section#donate p {
   margin: 0 auto 3rem auto;
   width: 60%;
 }
+@media (max-width: 768px) {
+  section#donate p {
+    width: 100%;
+  }
+}
 section#donate .video-box {
   width: 60%;
   margin: 0 auto 4rem auto;
+}
+@media (max-width: 768px) {
+  section#donate .video-box {
+    width: 100%;
+  }
 }
 section#donate .video-box .embed-container {
   position: relative;
