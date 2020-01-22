@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700&display=swap");
 html {
+  scroll-behavior: smooth;
   font-size: 12px;
 }
 @media (min-width: 768px) {

@@ -25,6 +25,7 @@ $background-gradient: linear-gradient(to bottom,#f9fbfd 0,#fff 100%);
 
 // General Styles
 html{
+    scroll-behavior: smooth;
     font-size: 12px;
     @media (min-width: 768px) { 
         font-size: 12px;    
