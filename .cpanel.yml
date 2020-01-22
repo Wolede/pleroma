@@ -5,4 +5,6 @@ deployment:
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp bootstrap.min.css $DEPLOYPATH
     - /bin/cp main.css $DEPLOYPATH
+    - /bin/cp main.js $DEPLOYPATH
+    - /bin/cp mail.php $DEPLOYPATH
     - /bin/cp -R images $DEPLOYPATH

@@ -133,6 +133,7 @@ h4.header{
     margin-top: 1rem;
     margin-bottom: 1rem;
     border-radius: 10px;
+    border: none;
 }
 .nav-button{
     // font-size: 1.1rem;
@@ -288,6 +289,18 @@ section#donate{
     background-color: rgba($color: $black, $alpha: .6);
     text-align: center;
     color: $white;
+
+    input{
+        padding: 1.5rem;
+    }
+    #donateForm{
+        max-width: 600px;
+        margin: 0 auto;
+
+        .form-group{
+            text-align: left;
+        }
+    }
     p{
         margin: 0 auto 3rem auto;
         width: 60%;
