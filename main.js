@@ -1,6 +1,7 @@
 const form = document.getElementById("contact-form");
 const donateForm = document.getElementById("donateForm");
 const donateButton = document.getElementById("donateButton");
+const formNotice = document.getElementById("form-notice");
 
 
 form.addEventListener("submit", e => {
@@ -24,10 +25,15 @@ form.addEventListener("submit", e => {
       })
         .then(response => response)
         .then(data => {
-          console.log(data);
+        //   console.log(data);
+            formNotice.innerHTML = "Email was sent Successfully!"
+            formNotice.style.display = 'block';
+            form.reset();
         })
         .catch(err => {
-          console.log(err);
+        //   console.log(err);
+            formNotice.innerHTML = "Sorry! An error occured."
+            formNotice.style.display = 'block'
         });
 });
 
@@ -51,9 +57,11 @@ function payWithPaystack(email, amount){
       },
       callback: function(response){
           alert('success. transaction ref is ' + response.reference);
+          donateForm.reset();
       },
       onClose: function(){
         //   alert('window closed');
+        donateForm.reset();
       }
     });
     handler.openIframe();
@@ -62,7 +70,5 @@ function payWithPaystack(email, amount){
   donateButton.addEventListener("click", () =>{
     const email = donateForm.elements.email.value;
     const amount = donateForm.elements.amount.value;
-    payWithPaystack(email, amount);
-    console.log("sds");
-    
+    payWithPaystack(email, amount);    
   });

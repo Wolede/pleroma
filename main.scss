@@ -347,8 +347,11 @@ section#contact{
         flex: 1;
         color: $white;
     }
-    input{
+    input, textarea{
         padding: 1.5rem;
+    }
+    #form-notice{
+        display: none;
     }
 }
 

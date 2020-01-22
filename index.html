@@ -34,7 +34,7 @@
                             <a href="#contact" class="nav-link"> CONTACT </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="button primary"> DONATE </a>
+                            <a href="#donate" class="button primary"> DONATE </a>
                         </li>
                     </ul>
                 </div>
@@ -242,20 +242,18 @@
                         <form id="contact-form">
                             <div class="form-field">
                                 <label for="">Your Name</label>
-                                <input type="text" class="form-control" name="name">
+                                <input type="text" class="form-control" name="name" required>
                             </div>  
                             <div class="form-field">
                                 <label for="">Your Email</label>
-                                <input type="email" class="form-control" name="email">
+                                <input type="email" class="form-control" name="email" required>
                             </div>  
                             <div class="form-field">
                                 <label for="">Your Message</label>
-                                <textarea name="message" id="" cols="30" rows="10" class="form-control">
-
-                                </textarea>
+                                <textarea name="message" id="" cols="30" rows="10" class="form-control"></textarea>
                             </div>  
                             <button href="" class="button primary">SEND</button>
-                            
+                            <p id="form-notice">Email was sent successfully!</p>
                         </form>
                     </div>
                 </div>

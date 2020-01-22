@@ -338,8 +338,11 @@ section#contact .reach-out {
   flex: 1;
   color: #ffffff;
 }
-section#contact input {
+section#contact input, section#contact textarea {
   padding: 1.5rem;
+}
+section#contact #form-notice {
+  display: none;
 }
 
 section#footer {
